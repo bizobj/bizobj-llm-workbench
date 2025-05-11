@@ -1,3 +1,30 @@
+/.classpath
+/.project
+/.settings/
+/target/
+/logs/
+/.idea/
+/.vite/
+
+/**/.classpath
+/**/.project
+/**/.settings/
+/**/target
+/**/target/
+/**/logs
+/**/logs/
+/**/.idea/
+/**/.vite/
+
+/**/.vscode
+/**/.apt_generated
+/**/.apt_generated_tests
+
+/**/*.iml
+
+/**/dist
+/**/node_modules
+
 # Compiled class file
 *.class
 
