@@ -1,1 +1,9 @@
-spring.application.name: bizobj-ai-apps-testsuites
+spring:
+    application:
+        name: bizobj-ai-apps-testsuites
+    config.import:
+        - classpath:/config-units/testsuites.yml
+
+# Disable buildin OpenAI Model
+spring.ai.openai.base-url: "https://not-existed.local/"
+spring.ai.openai.api-key: "******"
