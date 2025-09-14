@@ -1,4 +1,4 @@
-import { GitHubBanner, Refine } from "@refinedev/core";
+import { Refine } from "@refinedev/core";
 import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 
@@ -20,6 +20,8 @@ import { App as AntdApp } from "antd";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router";
 import { Header } from "./components/header";
 import { ColorModeContextProvider } from "./contexts/color-mode";
+import { AppIcon } from "./app-icon";
+
 import {
   BlogPostCreate,
   BlogPostEdit,
@@ -33,10 +35,11 @@ import {
   CategoryShow,
 } from "./pages/categories";
 
+const APP_NAME = "LLM TestSuites";
+
 function App() {
   return (
     <BrowserRouter>
-      <GitHubBanner />
       <RefineKbarProvider>
         <ColorModeContextProvider>
           <AntdApp>
@@ -71,6 +74,7 @@ function App() {
                   syncWithLocation: true,
                   warnWhenUnsavedChanges: true,
                   projectId: "m2Zgfq-dIyAFZ-qWAMnD",
+                  title: { text: APP_NAME, icon: <AppIcon /> },
                 }}
               >
                 <Routes>
@@ -106,7 +110,18 @@ function App() {
 
                 <RefineKbar />
                 <UnsavedChangesNotifier />
-                <DocumentTitleHandler />
+                <DocumentTitleHandler
+                handler={({ action, resource }) => {
+                  let title = resource?.meta?.label;
+                  if (!title) {
+                    title = resource?.name ? resource.name : "Resource";
+                  }
+                  if (action){
+                    title = title + "." + action;
+                  }
+                  return `${title} - ${APP_NAME}`;
+                }}
+              />
               </Refine>
               <DevtoolsPanel />
             </DevtoolsProvider>

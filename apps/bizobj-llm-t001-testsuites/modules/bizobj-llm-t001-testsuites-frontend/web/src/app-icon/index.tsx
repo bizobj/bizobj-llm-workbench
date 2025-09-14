@@ -1,0 +1,51 @@
+import React from "react";
+
+export const AppIcon: React.FC = () => {
+  return (
+<svg id="ai-icon" width="24" height="24" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+	{ /* <!-- 背景渐变 --> */ }
+	<linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+		<stop offset="0%" style={{ stopColor: "#0066ff", stopOpacity: 0.8 }}></stop>
+		<stop offset="100%" style={{ stopColor: "#00ccff", stopOpacity: 0.8 }}></stop>
+	</linearGradient>
+	{ /* <!-- 文字渐变 --> */ }
+	<linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+		<stop offset="0%" style={{ stopColor: "rgb(26, 95, 180)", stopOpacity: 1 }}></stop>
+		<stop offset="100%" style={{ stopColor: "rgb(1, 70, 155)", stopOpacity: 1 }}></stop>
+	</linearGradient>
+	{ /* <!-- 发光滤镜 --> */ }
+	<filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+		<feGaussianBlur stdDeviation="2" result="blur"></feGaussianBlur>
+		<feMerge><feMergeNode in="blur"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+	</filter>
+	</defs>
+
+	{ /* <!-- 背景圆 --> */ }
+	<circle cx="100" cy="100" r="90" fill="url(#bgGradient)" stroke="rgba(255,255,255,.2)" stroke-width="2"></circle>
+
+	{ /* <!-- 水印 bizobj（半透明，旋转） --> */ }
+	<text x="100" font-family="Arial, sans-serif" font-weight="bold" fill="rgba(255,255,255,0.15)" text-anchor="middle" transform="rotate(-30 100 100)" font-size="64" y="120">
+	bizobj
+	</text>
+
+	{ /* <!-- 第一行大字 LLM --> */ }
+	<text font-family="Arial, sans-serif" font-weight="bold" fill="url(#textGradient)" text-anchor="middle" filter="url(#glow)" font-size="72" x="100" y="120">
+	LLM
+	</text>
+
+	{ /* <!-- 第二行小字 Workbench（不同颜色） --> */ }
+	<text x="100" font-family="Arial, sans-serif" text-anchor="middle" font-size="18" y="150" font-weight="300" font-style="italic" fill="darkorange">
+	Workbench
+	</text>
+
+	{ /* <!-- 装饰亮点 --> */ }
+	<circle cx="50" cy="50" r="5" fill="rgba(255,255,255,.3)">
+	<animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"></animate>
+	</circle>
+	<circle cx="150" cy="150" r="3" fill="rgba(255,255,255,.4)">
+	<animate attributeName="opacity" values="0.4;0.9;0.4" dur="1.5s" repeatCount="indefinite"></animate>
+	</circle>
+</svg>
+  );
+};
