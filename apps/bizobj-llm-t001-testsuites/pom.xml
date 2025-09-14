@@ -19,12 +19,15 @@
 	<packaging>pom</packaging>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>21</java.version>
+
 		<spring-ai.version>1.0.0</spring-ai.version>
 	</properties>
 
 	<modules>
 		<module>bizobj-llm-t001-testsuites-backend</module>
+		<module>modules/bizobj-llm-t001-testsuites-frontend</module>
 	</modules>
 
 </project>

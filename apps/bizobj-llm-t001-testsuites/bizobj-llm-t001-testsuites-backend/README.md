@@ -2,7 +2,7 @@
 
 ## How to run
 - `.vscode/launch.json`
-```json
+   ```json
     "configurations": [
         {
             "type": "java",
@@ -15,7 +15,7 @@
             }
         }
     ]
-```
+   ```
 
 ## Reference
 
