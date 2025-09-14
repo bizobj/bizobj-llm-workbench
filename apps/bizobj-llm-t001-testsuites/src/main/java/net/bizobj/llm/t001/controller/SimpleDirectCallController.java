@@ -1,4 +1,4 @@
-package net.bizobj.ai.apps.testsuites.testsuite001;
+package net.bizobj.llm.t001.controller;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.openai.OpenAiChatModel;
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import net.bizobj.ai.apps.testsuites.config.TestSuitesProperties;
-import net.bizobj.ai.apps.testsuites.config.TestSuitesProperties.OpenAIEndpoint;
-import net.bizobj.ai.apps.testsuites.utils.TestSuiteUtils;
+import net.bizobj.llm.t001.config.TestSuitesProperties;
+import net.bizobj.llm.t001.config.TestSuitesProperties.OpenAIEndpoint;
+import net.bizobj.llm.t001.utils.TestSuiteUtils;
 
 @RestController
 @RequestMapping("/testsuite001")

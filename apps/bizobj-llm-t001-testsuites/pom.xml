@@ -11,10 +11,10 @@
 	</parent>
 
 	<groupId>net.bizobj.ai.apps</groupId>
-	<artifactId>bizobj-ai-apps-testsuites</artifactId>
+	<artifactId>bizobj-llm-t001-testsuites</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>bizobj-ai-apps-testsuites</name>
-	<description>Bizobj AI Test Suites Application</description>
+	<name>bizobj-llm-t001-testsuites</name>
+	<description>Bizobj LLM T001 - Test Suites Application</description>
 
 	<properties>
 		<java.version>21</java.version>

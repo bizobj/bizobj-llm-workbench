@@ -1,4 +1,4 @@
-net.bizobj.ai.apps.testsuites:
+net.bizobj.llm.t001:
     openai-endpoints:
         - key: local-ollama
           description: "The Local Ollama Server"

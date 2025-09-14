@@ -1,4 +1,4 @@
-package net.bizobj.ai.apps.testsuites.config;
+package net.bizobj.llm.t001.config;
 
 import java.util.List;
 
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ConfigurationProperties(TestSuitesProperties.TESTSUITES_CONFIG_PREFIX)
 public class TestSuitesProperties {
-    public static final String TESTSUITES_CONFIG_PREFIX = "net.bizobj.ai.apps.testsuites";
+    public static final String TESTSUITES_CONFIG_PREFIX = "net.bizobj.llm.t001";
 
     /**
      * All the OpenAI backends
@@ -23,7 +23,7 @@ public class TestSuitesProperties {
     }
 
     /**
-     * OpenAI Endpoint defination
+     * OpenAI Endpoint definition
      */
     public static class OpenAIEndpoint {
         /** The Identity Key for endpoint */
