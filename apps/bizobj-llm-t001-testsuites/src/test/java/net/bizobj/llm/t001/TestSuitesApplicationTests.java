@@ -1,4 +1,4 @@
-package net.bizobj.ai.apps.testsuites;
+package net.bizobj.llm.t001;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
