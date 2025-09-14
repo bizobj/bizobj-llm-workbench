@@ -1,4 +1,3 @@
-import { ResourceProps } from "@refinedev/core"
 import { NavIconExampleBlogPosts, NavIconExampleCategories, NavIconExamples } from "../../resources/nav-icons"
 import { Route } from "react-router";
 import { BlogPostCreate, BlogPostEdit, BlogPostList, BlogPostShow } from "./blog-posts";
@@ -43,24 +42,24 @@ export const ExamplesResources = () => {
         },
     ];
 }
-export const ExamplesRouteBlogPosts = () => {
-    return (
-        <Route path="/blog-posts">
-            <Route index element={<BlogPostList />} />
-            <Route path="create" element={<BlogPostCreate />} />
-            <Route path="edit/:id" element={<BlogPostEdit />} />
-            <Route path="show/:id" element={<BlogPostShow />} />
-        </Route>
-    );
-}
 
-export const ExamplesRouteCategories = () => {
-    return (
-        <Route path="/categories">
-            <Route index element={<CategoryList />} />
-            <Route path="create" element={<CategoryCreate />} />
-            <Route path="edit/:id" element={<CategoryEdit />} />
-            <Route path="show/:id" element={<CategoryShow />} />
-        </Route>
-    );
+export const ExamplesRoutes = () => {
+    return [
+        (
+            <Route path="/categories">
+                <Route index element={<CategoryList />} />
+                <Route path="create" element={<CategoryCreate />} />
+                <Route path="edit/:id" element={<CategoryEdit />} />
+                <Route path="show/:id" element={<CategoryShow />} />
+            </Route>
+        ),
+        (
+            <Route path="/blog-posts">
+                <Route index element={<BlogPostList />} />
+                <Route path="create" element={<BlogPostCreate />} />
+                <Route path="edit/:id" element={<BlogPostEdit />} />
+                <Route path="show/:id" element={<BlogPostShow />} />
+            </Route>
+        ),
+    ];
 }

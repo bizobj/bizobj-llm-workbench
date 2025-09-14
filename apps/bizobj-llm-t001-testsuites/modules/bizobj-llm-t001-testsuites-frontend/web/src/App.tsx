@@ -21,7 +21,7 @@ import { Header } from "./components/header";
 import { ColorModeContextProvider } from "./contexts/color-mode";
 import { AppIcon } from "./resources/app-icon";
 
-import { ExamplesResources, ExamplesRouteBlogPosts, ExamplesRouteCategories, RESOURCE_BLOG_POSTS } from "./pages/examples";
+import { ExamplesResources, ExamplesRoutes, RESOURCE_BLOG_POSTS } from "./pages/examples";
 import { AppDataProviders } from "./contexts/data-providers";
 
 const APP_NAME = "LLM TestSuites";
@@ -63,8 +63,7 @@ function App() {
                       index
                       element={<NavigateToResource resource={ RESOURCE_BLOG_POSTS } />}
                     />
-                    { ExamplesRouteBlogPosts() }
-                    { ExamplesRouteCategories() }
+                    { ...ExamplesRoutes() }
                     <Route path="*" element={<ErrorComponent />} />
                   </Route>
                 </Routes>
