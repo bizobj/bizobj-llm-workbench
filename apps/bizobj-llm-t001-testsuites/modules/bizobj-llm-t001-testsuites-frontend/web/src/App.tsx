@@ -20,7 +20,7 @@ import { App as AntdApp } from "antd";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router";
 import { Header } from "./components/header";
 import { ColorModeContextProvider } from "./contexts/color-mode";
-import { AppIcon } from "./app-icon";
+import { AppIcon } from "./resources/app-icon";
 
 import {
   BlogPostCreate,
@@ -34,6 +34,7 @@ import {
   CategoryList,
   CategoryShow,
 } from "./pages/categories";
+import { NavIconExampleBlogPosts, NavIconExampleCategories, NavIconExamples } from "./resources/nav-icons";
 
 const APP_NAME = "LLM TestSuites";
 
@@ -50,6 +51,12 @@ function App() {
                 routerProvider={routerProvider}
                 resources={[
                   {
+                    name: "Examples",
+                    meta: {
+                      icon: <NavIconExamples />,
+                    },
+                  },
+                  {
                     name: "blog_posts",
                     list: "/blog-posts",
                     create: "/blog-posts/create",
@@ -57,6 +64,8 @@ function App() {
                     show: "/blog-posts/show/:id",
                     meta: {
                       canDelete: true,
+                      icon: <NavIconExampleBlogPosts />,
+                      parent: "Examples",
                     },
                   },
                   {
@@ -67,6 +76,8 @@ function App() {
                     show: "/categories/show/:id",
                     meta: {
                       canDelete: true,
+                      icon: <NavIconExampleCategories />,
+                      parent: "Examples",
                     },
                   },
                 ]}
