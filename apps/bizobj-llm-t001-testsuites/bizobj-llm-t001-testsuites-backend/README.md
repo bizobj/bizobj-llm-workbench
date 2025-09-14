@@ -1,5 +1,22 @@
 # Getting Started
 
+## How to run
+- `.vscode/launch.json`
+```json
+    "configurations": [
+        {
+            "type": "java",
+            "name": "TestSuitesApplication",
+            "request": "launch",
+            "mainClass": "net.bizobj.llm.t001.TestSuitesApplication",
+            "projectName": "bizobj-llm-t001-testsuites-backend",
+            "env": {
+                "VOLCENGINE_TOKEN": "<the token from Volcengine>"
+            }
+        }
+    ]
+```
+
 ## Reference
 
 ### The Spring Initializr
